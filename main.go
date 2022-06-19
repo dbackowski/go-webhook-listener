@@ -13,6 +13,7 @@ var port int = 8080
 
 func handleWebhook(w http.ResponseWriter, r *http.Request) {
 	printHeaders(r)
+	fmt.Println("")
 	printBody(r)
 }
 
@@ -21,7 +22,7 @@ func printHeaders(r *http.Request) {
 	fmt.Println("--------")
 	for name, values := range r.Header {
 		for _, value := range values {
-			fmt.Println(name, value)
+			fmt.Printf("%s: %s\n", name, value)
 		}
 	}
 }
