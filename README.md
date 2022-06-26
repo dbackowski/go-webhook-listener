@@ -10,7 +10,7 @@ It starts the HTTP server on the 8080 port and will print received headers and J
 * go to cloned repo directory and run:
 
 ```
-go build webhook-listener.go
+go build main.go
 ./webhook-listener
 ```
 
