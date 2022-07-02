@@ -14,7 +14,7 @@ var port int = 8080
 func handleWebhook(w http.ResponseWriter, r *http.Request) {
 	printHeaders(r)
 	fmt.Println("")
-	printBody(r)
+	printBody(w, r)
 }
 
 func printHeaders(r *http.Request) {
@@ -27,12 +27,14 @@ func printHeaders(r *http.Request) {
 	}
 }
 
-func printBody(r *http.Request) {
+func printBody(w http.ResponseWriter, r *http.Request) {
 	body, _ := ioutil.ReadAll(r.Body)
 	jsonParsed, err := gabs.ParseJSON(body)
 
 	if err != nil {
-		panic(err)
+		fmt.Println("Cannot decode JSON payload")
+		w.WriteHeader(http.StatusBadRequest)
+		return
 	}
 
 	fmt.Println("BODY:")
