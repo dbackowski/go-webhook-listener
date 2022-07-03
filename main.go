@@ -31,14 +31,16 @@ func printBody(w http.ResponseWriter, r *http.Request) {
 	body, _ := ioutil.ReadAll(r.Body)
 	jsonParsed, err := gabs.ParseJSON(body)
 
+	fmt.Println("BODY:")
+	fmt.Println("-----")
+
 	if err != nil {
-		fmt.Println("Cannot decode JSON payload")
+		fmt.Println("Cannot decode JSON payload!")
+		fmt.Println(string(body))
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
 
-	fmt.Println("BODY:")
-	fmt.Println("-----")
 	fmt.Println(jsonParsed.StringIndent("", "  "))
 }
 
