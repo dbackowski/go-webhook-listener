@@ -1,2 +1,4 @@
 github.com/Jeffail/gabs/v2 v2.6.1 h1:wwbE6nTQTwIMsMxzi6XFQQYRZ6wDc1mSdxoAN+9U4Gk=
 github.com/Jeffail/gabs/v2 v2.6.1/go.mod h1:xCn81vdHKxFUuWWAaD5jCTQDNPBMh5pPs9IJ+NcziBI=
+github.com/dbackowski/colors v0.0.0-20220621083935-7b2925c0d653 h1:eCagD2495AtjOOPoP/RZn0QHlCNVPz9+IMN4/wVZCyc=
+github.com/dbackowski/colors v0.0.0-20220621083935-7b2925c0d653/go.mod h1:gSwIY6HP7tR292XTGF76+EzQLUzRLae01Tp6dD3RuZ4=

@@ -7,6 +7,7 @@ import (
 	"net/http"
 
 	"github.com/Jeffail/gabs/v2"
+	"github.com/dbackowski/colors"
 )
 
 var port int = 8080
@@ -18,7 +19,7 @@ func handleWebhook(w http.ResponseWriter, r *http.Request) {
 }
 
 func printHeaders(r *http.Request) {
-	fmt.Println("HEADERS:")
+	fmt.Println(colors.Colorize("HEADERS:", colors.FgGreen))
 	fmt.Println("--------")
 	for name, values := range r.Header {
 		for _, value := range values {
@@ -31,7 +32,7 @@ func printBody(w http.ResponseWriter, r *http.Request) {
 	body, _ := ioutil.ReadAll(r.Body)
 	jsonParsed, err := gabs.ParseJSON(body)
 
-	fmt.Println("BODY:")
+	fmt.Println(colors.Colorize("BODY:", colors.FgGreen))
 	fmt.Println("-----")
 
 	if err != nil {
