@@ -36,7 +36,7 @@ func printBody(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("-----")
 
 	if err != nil {
-		fmt.Println("Cannot decode JSON payload!")
+		fmt.Println(colors.Colorize("Cannot decode JSON payload!", colors.FgRed))
 		fmt.Println(string(body))
 		w.WriteHeader(http.StatusBadRequest)
 		return
