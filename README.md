@@ -32,27 +32,5 @@ curl -k -X POST -H 'Content-Type: application/json' -H 'APIKEY: test' -d '{
 
 * you should see received webhook in the output:
 
-```
-2022/06/19 17:21:38 server started on port: 8080
-HEADERS:
---------
-Content-Length: 188
-User-Agent: curl/7.79.1
-Accept: */*
-Content-Type: application/json
-Apikey: test
-BODY:
------
-{
-  "data": [
-    {
-      "id": 1,
-      "status": 2,
-      "test": {
-        "description": "test",
-        "id": 1
-      }
-    }
-  ]
-}
+![screenshot](https://i.imgur.com/7P0dlkP.png)
 ```
