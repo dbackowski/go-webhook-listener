@@ -1,4 +1,4 @@
-# Webhook listener
+# Webhook listener ![Tests](https://github.com/dbackowski/go-webhook-listener/actions/workflows/test.yml/badge.svg)
 
 Very simple webhook listener written in go.
 
