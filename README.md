@@ -33,4 +33,3 @@ curl -k -X POST -H 'Content-Type: application/json' -H 'APIKEY: test' -d '{
 * you should see received webhook in the output:
 
 ![screenshot](https://i.imgur.com/7P0dlkP.png)
-```
