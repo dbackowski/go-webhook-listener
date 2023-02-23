@@ -25,13 +25,13 @@ func captureHandleWebhookConsoleOutput(response http.ResponseWriter, request *ht
 
 func TestHandleWebhook(t *testing.T) {
 	t.Run("for valid json payload it returns propers headers and payload", func(t *testing.T) {
-		var jsonData = []byte(`{ "name": "morpheus", "job": "leader" }`)
+		var jsonData = []byte(`{"name":"morpheus","job":"leader"}`)
 		request, _ := http.NewRequest(http.MethodPost, "/", bytes.NewBuffer(jsonData))
 		request.Header.Set("Content-Type", "application/json; charset=UTF-8")
 		response := httptest.NewRecorder()
 
 		got := captureHandleWebhookConsoleOutput(response, request)
-		want := "\x1b[32mHEADERS:\x1b[0m\n--------\nContent-Type: application/json; charset=UTF-8\n\n\x1b[32mBODY:\x1b[0m\n-----\n{ \"name\": \"morpheus\", \"job\": \"leader\" }\n"
+		want := "\x1b[32mHEADERS:\x1b[0m\n--------\nContent-Type: application/json; charset=UTF-8\n\n\x1b[32mBODY:\x1b[0m\n-----\n{\n  \"name\": \"morpheus\",\n  \"job\": \"leader\"\n}\n"
 
 		if got != want {
 			t.Errorf("got %q, want %q", got, want)

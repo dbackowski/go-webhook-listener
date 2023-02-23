@@ -39,7 +39,9 @@ func printBody(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	jsonFormattedOutput, _ := json.MarshalIndent(jsonRawMessage, "", "  ")
+
 	fmt.Println(colors.Colorize("BODY:", colors.FgGreen))
 	fmt.Println("-----")
-	fmt.Println(string(jsonRawMessage))
+	fmt.Println(string(jsonFormattedOutput))
 }
