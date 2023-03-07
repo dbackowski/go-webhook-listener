@@ -13,6 +13,10 @@ func HandleWebhook(w http.ResponseWriter, r *http.Request) {
 	printHeaders(r)
 	fmt.Println("")
 	printBody(w, r)
+
+	if len(responseBody) > 0 {
+		w.Write([]byte(responseBody))
+	}
 }
 
 func printHeaders(r *http.Request) {
